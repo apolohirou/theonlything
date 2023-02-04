@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: #f2f2f2;
+      }
+      textarea {
+        width: 400px;
+        height: 200px;
+        padding: 10px;
+        font-size: 16px;
+        20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #ccc;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: lightblue;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 2px 2px 5px #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <textarea id="input"></textarea>
+      <button onclick="replaceLetters()">Replace Letters</button>
+      <textarea id="output" readonly></textarea>
+    </div>
+
+    <script>
+      function replaceLetters() {
+        let input = document.getElementById("input").value;
+        let output = input.replace(/b|p/g, '9')
+          .replace(/c|k|q/g, '7')
+          .replace(/f|v/g, '8')
+          .replace(/g|j/g, '6')
+          .replace(/l/g, '5')
+          .replace(/r/g, '4')
+          .replace(/m/g, '3')
+          .replace(/n/g, '2')
+          .replace(/t|d/g, '1')
+          .replace(/s|z|ç/g, '0')
+          .replace(/a/g, 't')
+          .replace(/x/g, 'f')
+          .replace(/e/g, 'x')
+          .replace(/h/g, 'n')
+          .replace(/w|u/g, 'z')
+          .replace(/i|y/g, 'w')
+          .replace(/l/g, '5')
+          .replace(/o/g, 'j');
+        document.getElementById("output").value = output;
+      }
+    </script>
+  </body>
+</html>
